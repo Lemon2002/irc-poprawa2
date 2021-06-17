@@ -1,0 +1,367 @@
+<html lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!-- emotes -->
+  <!-- <link href="./stylesheets/jquery.cssemoticons.css" media="screen" rel="stylesheet" type="text/css" /> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- <script src="./emotes/jquery.cssemoticons.min.js" type="text/javascript"></script> -->
+  <!-- scrollbar -->
+  <!-- <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script> -->
+  <script src="/stylesheets_js/jquery.nicescroll-master/jquery.nicescroll.js"></script>
+  <!-- <script type="text/javascript" src="scripts/jquery.tinyscrollbar.min.js"></script> -->
+
+
+  <link href="stylesheets_js/jquery.cssemoticons.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <script src="emotes_js/jquery.cssemoticons.js" type="text/javascript"></script>
+
+  <script>
+    // $(document).ready(function () {
+    //   // define scrollbars
+    //   $(".scrollbar").tinyscrollbar({
+    //     prefix: "",
+    //     updateTime: 200,
+    //   });
+      // update block when changed
+      // accepts 1 param:
+      // - 'top' (if none) or 'bottom';
+      // - 'relative' sets the position of the scrollbar relative to the old content when new content is passed in;
+      // - integer, to move to a certain location in the content.
+      // $(".scrollbar").tinyscrollbar_update();
+    // });
+  </script>
+  <!-- <link rel="stylesheet" type="text/css" href="stylesheets/jquery.tinyscrollbar.css" media="all" /> -->
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <style type="text/css">
+    /* #main { height: 460px; margin: 0 auto; width: 460px;}
+        #main1 { height: 200px; margin: 0 auto; width: 700px;}*/
+    .ui-corner-all {
+      border-radius: 4px;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function emoticonize() {
+      console.log("kzzz");
+      // $(document).ready(function () {
+      $(".text").emoticonize({
+        //delay: 800,
+        //animate: false,
+        //exclude: 'pre, code, .no-emoticons'
+      });
+      // $("#toggle-headline").toggle(
+      //   function () {
+      //     $("#large").unemoticonize({
+      //       //delay: 800,
+      //       //animate: false
+      //     });
+      //   },
+      //   function () {
+      //     $("#large").emoticonize({
+      //       //delay: 800,
+      //       //animate: false
+      //     });
+      //   }
+      // );
+      // })
+    }
+    $(document).ready(function () {
+      $("html").niceScroll();
+    });
+  </script>
+
+  <style type="text/css">
+    #small {
+      font-size: 8px;
+    }
+
+    #large {
+      font-size: 72px;
+    }
+
+    #regular {
+      font-size: 20px;
+    }
+
+    .wrapped {
+      width: 350px;
+    }
+
+    .viewport {
+      overflow-y: hidden;
+      height: 100%;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pierwszy" class="scrollbar">
+    <div class="viewport"></div>
+  </div>
+  <div id="koniec" display="noun"></div>
+
+  <form method="GET" id="form">
+    <input type="text" placeholder="Witaj na czacie!!" id="message" />
+
+    <input type="submit" value="submit" />
+  </form>
+
+  <script>
+    var kolortekstu = "black";
+    var suwak = $(".scrollbar");
+
+    $(document).ready(function () {
+      $(".viewport").niceScroll();
+    })
+
+
+    // let $scrollbar = $(".scrollbar")
+    // $scrollbar.tinyscrollbar()
+    // let $scrollbarData = $scrollbar.data("plugin_tinyscrollbar");
+
+    wejscie = prompt("Podaj swój nick!");
+
+    let randomColor = function () {
+      var kolor1 = getRandomIntInclusive();
+      var kolor2 = getRandomIntInclusive();
+      var kolor3 = getRandomIntInclusive();
+
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(0);
+        max = Math.floor(255);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      let color = "RGB" + "(" + kolor1 + "," + kolor2 + "," + kolor3 + ")";
+
+      return color;
+    };
+
+    let yourColor = randomColor();
+    console.log(yourColor);
+
+    function komendy(slowo) {
+      var tablica = [];
+      tablica.push(slowo);
+
+      if (slowo == "/color") {
+        var kolor1 = getRandomIntInclusive();
+        var kolor2 = getRandomIntInclusive();
+        var kolor3 = getRandomIntInclusive();
+
+        function getRandomIntInclusive(min, max) {
+          min = Math.ceil(0);
+          max = Math.floor(255);
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandomIntInclusive(min, max) {
+          min = Math.ceil(0);
+          max = Math.floor(255);
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandomIntInclusive(min, max) {
+          min = Math.ceil(0);
+          max = Math.floor(255);
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        let wiadomosc = document.createElement("div");
+
+        document.getElementsByClassName("viewport")[0].appendChild(wiadomosc);
+
+        (wiadomosc.style.color = "RGB" + "(" + kolor1), kolor2, kolor3 + ")";
+
+        document.getElementsByClassName("viewport")[0].appendChild(wiadomosc);
+
+        // suwak.tinyscrollbar_update();
+      }
+
+      if (slowo == "/nick") {
+        wejscie = prompt("Zmień swój nick!");
+
+        let wiadomosc = document.createElement("div");
+
+        let user = document.createElement("div2");
+
+        document.getElementsByClassName("viewport")[0].appendChild(user);
+
+        document.getElementsByClassName("viewport")[0].appendChild(wiadomosc);
+
+        wiadomosc.style.color = "red";
+
+        document.getElementsByClassName("viewport")[0].appendChild(user);
+
+        document.getElementsByClassName("viewport")[0].appendChild(wiadomosc);
+
+        // suwak.tinyscrollbar_update();
+      }
+
+      if (slowo == "/quit") {
+        document.getElementById("pierwszy").innerHTML = "DISCONNECTED";
+      } else {
+      }
+    }
+
+    const sendingMessage = function (data) {
+      console.log(data);
+
+      $.ajax({
+        url: "/msg",
+        data: data,
+        type: "POST",
+        // success: function (response) {
+        //   console.log(response)
+        //   // tutaj pokaż obrazek w img lub div
+        //   // którego nazwa przyszła z serwer-a
+        //   resolve(true)
+        // },
+        // error: function (xhr, status, error) {
+        //   console.log(xhr);
+        //   reject(false);
+        // },
+      });
+    }
+
+
+
+    // var sendingMessage = async function (data) {
+    //   console.log(data);
+    //   return new Promise((resolve, reject) => {
+    //     const http = new XMLHttpRequest();
+    //     var url = 'http://localhost:3000/msg';
+    //     var params = data
+    //     http.open('POST', url, true);
+    //     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //     commandType = false
+    //     http.onload = () => resolve(http.responseText);
+    //     http.onerror = () => reject(http.statusText);
+    //     http.send(params);
+    //   })
+    // }
+    //   $.ajax({
+    //     url: "/msg/",
+    //     data: data,
+    //     type: "POST",
+
+    //     error: function (xhr, status, error) {
+    //       console.log(xhr);
+    //     },
+    //   });
+    // };
+
+    $("#form").submit(function (event) {
+      event.preventDefault();
+
+      let message = document.getElementById("message").value;
+
+      if (message == "/color") {
+        yourColor = randomColor();
+
+        document.getElementById("message").value = "";
+      } else if (message == "/nick") {
+        wejscie = prompt("Zmień swój nick!");
+
+        document.getElementById("message").value = "";
+      } else if (message == "/quit") {
+        document.getElementById("pierwszy").innerHTML = "DISCONNECTED";
+      } else {
+        console.log(message);
+        let ob = {
+          message: message,
+          nick: wejscie,
+          color: yourColor,
+        };
+        sendingMessage(ob);
+
+        document.getElementById("message").value = "";
+      }
+    });
+
+    var poll = async function () {
+      let response = await fetch("/poll")
+      console.log(response)
+      // success: function (data) {
+      //   console.log(data);
+
+      //   let wiadomosc = document.createElement("div");
+
+      //   wiadomosc.innerHTML =
+      //     "</br><b>" +
+      //     " " +
+      //     data.nick +
+      //     " " +
+      //     "</b>" +
+      //     '<span class="text">' +
+      //     data.message +
+      //     "</span>";
+
+      //   document
+      //     .getElementsByClassName("viewport")[0]
+      //     .appendChild(wiadomosc);
+
+      //   wiadomosc.style.color = data.color;
+
+      //   document
+      //     .getElementsByClassName("viewport")[0]
+      //     .appendChild(wiadomosc);
+
+      //   // $(wiadomosc).emoticonize();
+      //   emoticonize();
+
+      //   suwak.tinyscrollbar_update();
+
+      //   poll();
+      // },
+      // error: function () {
+      //   poll();
+      // },
+      // timeout: 30000, // 30 seconds
+      // });
+      console.log(response)
+      if (response.status == 200) {
+        let data = await response.json()
+        let wiadomosc = document.createElement("div");
+
+        wiadomosc.innerHTML =
+          "</br><b>" +
+          " " +
+          data.nick +
+          " " +
+          "</b>" +
+          '<span class="text">' +
+          data.message +
+          "</span>";
+
+        document
+          .getElementsByClassName("viewport")[0]
+          .appendChild(wiadomosc);
+
+        wiadomosc.style.color = data.color;
+
+        document
+          .getElementsByClassName("viewport")[0]
+          .appendChild(wiadomosc);
+
+        // $(wiadomosc).emoticonize();
+        emoticonize();
+        let element = document.querySelector('.viewport');
+        element.scrollTop = element.scrollHeight;
+        await poll();
+
+      }
+      else {
+        await poll();
+      }
+    };
+
+    // Make sure to call it once first,
+    poll();
+  </script>
+</body>
+
+</html>
